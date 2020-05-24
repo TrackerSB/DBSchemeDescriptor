@@ -4,7 +4,7 @@
 
     <groupId>bayern.steinbrecher</groupId>
     <artifactId>DBSchemeDescriptor</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
     <packaging>jar</packaging>
 
     <name>DBSchemeDescriptor</name>
@@ -174,7 +174,7 @@
         <connection>scm:git:ssh://git@github.com/TrackerSB/DBSchemeDescriptor.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/TrackerSB/DBSchemeDescriptor.git</developerConnection>
         <url>https://github.com/TrackerSB/DialogUtility</url>
-      <tag>HEAD</tag>
+      <tag>v0.1</tag>
   </scm>
 
     <distributionManagement>
