@@ -173,7 +173,7 @@
     <scm>
         <connection>scm:git:ssh://git@github.com/TrackerSB/DBSchemeDescriptor.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/TrackerSB/DBSchemeDescriptor.git</developerConnection>
-        <url>https://github.com/TrackerSB/DialogUtility</url>
+        <url>https://github.com/TrackerSB/DBSchemeDescriptor</url>
       <tag>HEAD</tag>
   </scm>
 
