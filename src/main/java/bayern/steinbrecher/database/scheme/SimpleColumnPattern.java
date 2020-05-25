@@ -16,6 +16,7 @@ import java.util.function.BiFunction;
  * @param <T> The type of the contents this column holds.
  * @param <U> The type of object to set the content of this column to.
  * @author Stefan Huber
+ * @since v0.1
  */
 public class SimpleColumnPattern<T, U> extends ColumnPattern<T, U> {
 
@@ -33,6 +34,7 @@ public class SimpleColumnPattern<T, U> extends ColumnPattern<T, U> {
      * @param parser         The parser to convert values from and to a SQL representation.
      * @param setter         The function used to set a parsed value to a given object. The setter should only return
      *                       a new object of type {@link U} if the handed in one is immutable.
+     * @since v0.1
      */
     public SimpleColumnPattern(@NotNull String realColumnName, @NotNull Set<TableCreationKeywords> keywords,
                                @NotNull ColumnParser<T> parser, @NotNull BiFunction<U, T, U> setter) {
@@ -53,6 +55,7 @@ public class SimpleColumnPattern<T, U> extends ColumnPattern<T, U> {
      *                       as default value. Otherwise the value of the inner {@link Optional} represents the default
      *                       value.
      * @see ColumnPattern#ColumnPattern(java.lang.String, ColumnParser)
+     * @since v0.1
      */
     public SimpleColumnPattern(@NotNull String realColumnName, @NotNull Set<TableCreationKeywords> keywords,
                                @NotNull ColumnParser<T> parser, @NotNull BiFunction<U, T, U> setter,
@@ -77,6 +80,9 @@ public class SimpleColumnPattern<T, U> extends ColumnPattern<T, U> {
         this.setter = setter;
     }
 
+    /*
+     * @since v0.1
+     */
     @Override
     @NotNull
     public U combineImpl(@NotNull U toSet, @NotNull String columnName, @Nullable String valueToParse) {
@@ -91,6 +97,7 @@ public class SimpleColumnPattern<T, U> extends ColumnPattern<T, U> {
      * Checks whether a default value is set for this column
      *
      * @return {@code true} only if a default value is associated with this column.
+     * @since v0.1
      */
     public boolean hasDefaultValue() {
         return getDefaultValue().isPresent();
@@ -102,6 +109,7 @@ public class SimpleColumnPattern<T, U> extends ColumnPattern<T, U> {
      * @return The {@link String} representation of the default value suitable for SQL. If the default value is
      * {@code null} the {@link String} "NULL" (without quotes) is returned.
      * @see #getDefaultValue()
+     * @since v0.1
      */
     @NotNull
     public String getDefaultValueSql() {
@@ -114,6 +122,7 @@ public class SimpleColumnPattern<T, U> extends ColumnPattern<T, U> {
      * Returns the default value to set when creating a table containing this column.
      *
      * @return The default value to set when creating a table containing this column. See description of constructors.
+     * @since v0.1
      */
     @NotNull
     public Optional<Optional<T>> getDefaultValue() {
@@ -124,6 +133,7 @@ public class SimpleColumnPattern<T, U> extends ColumnPattern<T, U> {
      * Returns the real column name of this column.
      *
      * @return The real column name of this column.
+     * @since v0.1
      */
     @NotNull
     public String getRealColumnName() {
@@ -134,6 +144,7 @@ public class SimpleColumnPattern<T, U> extends ColumnPattern<T, U> {
      * Returns the SQL keywords associated with columns matching this pattern name.
      *
      * @return The SQL keywords associated with columns matching this pattern name.
+     * @since v0.1
      */
     @NotNull
     public Set<TableCreationKeywords> getKeywords() {

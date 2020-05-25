@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
  * @param <T> The datatype of the values stored in the column.
  * @param <U> The type of objects the content of this column belongs to.
  * @author Stefan Huber
+ * @since v0.1
  */
 public abstract class ColumnPattern<T, U> {
 
@@ -22,6 +23,7 @@ public abstract class ColumnPattern<T, U> {
     /**
      * @param columnNamePattern The RegEx column names have to match.
      * @param parser            The parser for converting values from and to their SQL representation.
+     * @since v0.1
      */
     protected ColumnPattern(@NotNull String columnNamePattern, @NotNull ColumnParser<T> parser) {
         Objects.requireNonNull(columnNamePattern, "The pattern for the column name is required");
@@ -34,16 +36,25 @@ public abstract class ColumnPattern<T, U> {
         this.parser = parser;
     }
 
+    /*
+     * @since v0.1
+     */
     @NotNull
     public Pattern getColumnNamePattern() {
         return columnNamePattern;
     }
 
+    /*
+     * @since v0.1
+     */
     public boolean matches(String columnName) {
         return getColumnNamePattern().matcher(columnName)
                 .matches();
     }
 
+    /*
+     * @since v0.1
+     */
     @NotNull
     public ColumnParser<T> getParser() {
         return parser;
@@ -56,8 +67,9 @@ public abstract class ColumnPattern<T, U> {
      * @param columnName The column name matching this pattern to extract the key from.
      * @param value      The value to parse and to set.
      * @return The resulting object of type {@link U}.
+     * @since v0.1
      */
-    public final U combine(@NotNull U toSet, @NotNull String columnName, @Nullable String value){
+    public final U combine(@NotNull U toSet, @NotNull String columnName, @Nullable String value) {
         if (getColumnNamePattern().matcher(columnName).matches()) {
             String valueToParse;
             if (value == null || value.equalsIgnoreCase("null")) {
@@ -71,6 +83,9 @@ public abstract class ColumnPattern<T, U> {
         }
     }
 
+    /*
+     * @since v0.1
+     */
     public abstract U combineImpl(@NotNull U toSet, @NotNull String columnName, @Nullable String valueToParse);
 
     /**
@@ -79,6 +94,7 @@ public abstract class ColumnPattern<T, U> {
      *
      * @param obj The object to compare this column pattern with.
      * @return {@code true} only if this pattern reflects the same column names as the given object.
+     * @since v0.1
      */
     @Override
     public boolean equals(Object obj) {
@@ -91,6 +107,9 @@ public abstract class ColumnPattern<T, U> {
         return isEqual;
     }
 
+    /*
+     * @since v0.1
+     */
     @Override
     public int hashCode() {
         //CHECKSTYLE.OFF: MagicNumber - This is the default implementation of NetBeans.
@@ -100,6 +119,9 @@ public abstract class ColumnPattern<T, U> {
         return hash;
     }
 
+    /*
+     * @since v0.1
+     */
     @Override
     @NotNull
     public String toString() {

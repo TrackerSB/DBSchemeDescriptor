@@ -3,12 +3,13 @@ package bayern.steinbrecher.utility;
 /**
  * Represents a {@link java.util.function.BiFunction} but accepting three different input parameter.
  *
- * @author Stefan Huber
  * @param <T> The type of the first argument.
  * @param <U> The type of the second argument.
  * @param <V> The type of the third argument.
  * @param <R> The type of the output.
+ * @author Stefan Huber
  * @see java.util.function.BiFunction
+ * @since v0.1
  */
 @FunctionalInterface
 @SuppressWarnings("PMD.ShortVariable")

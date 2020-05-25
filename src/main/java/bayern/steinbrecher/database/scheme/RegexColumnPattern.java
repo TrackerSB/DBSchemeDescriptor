@@ -16,6 +16,7 @@ import java.util.function.Function;
  * @param <K> The type of the key to distinguish the columns matching this pattern.
  * @author Stefan Huber
  * @see SimpleColumnPattern
+ * @since v0.1
  */
 public class RegexColumnPattern<T, U, K> extends ColumnPattern<T, U> {
 
@@ -32,6 +33,7 @@ public class RegexColumnPattern<T, U, K> extends ColumnPattern<T, U> {
      *                          return a new object of type {@link U} if the handed in one is immutable.
      * @param keyExtractor      Extracts the key for a given column name matching this pattern.
      * @see ColumnPattern#ColumnPattern(java.lang.String, ColumnParser)
+     * @since v0.1
      */
     public RegexColumnPattern(@NotNull String columnNamePattern, @NotNull ColumnParser<T> parser,
                               @NotNull TriFunction<U, K, T, U> setter, @NotNull Function<String, K> keyExtractor) {
@@ -43,6 +45,9 @@ public class RegexColumnPattern<T, U, K> extends ColumnPattern<T, U> {
         this.keyExtractor = keyExtractor;
     }
 
+    /*
+     * @since v0.1
+     */
     public U combineImpl(@NotNull U toSet, @NotNull String columnName, @Nullable String valueToParse) {
         K key = keyExtractor.apply(columnName);
         T parsedValue = getParser()

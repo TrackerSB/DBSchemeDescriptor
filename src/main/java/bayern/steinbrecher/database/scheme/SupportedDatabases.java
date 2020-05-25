@@ -21,10 +21,12 @@ import java.util.stream.Stream;
  * This enum lists all supported databases like MySQL.
  *
  * @author Stefan Huber
+ * @since v0.1
  */
 public enum SupportedDatabases {
     /**
      * Represents a MySQL database.
+     * @since v0.1
      */
     MY_SQL("MySQL", 3306,
             HashBiMap.create(Map.of(
@@ -84,6 +86,7 @@ public enum SupportedDatabases {
      *
      * @param column The column for which a line should be created which can be used in CREATE statements.
      * @return A list of the appropriate SQL keywords for the given ones.
+     * @since v0.1
      */
     @NotNull
     public String generateCreateLine(@NotNull SimpleColumnPattern<?, ?> column) {
@@ -116,6 +119,7 @@ public enum SupportedDatabases {
      *
      * @param keyword The keyword to get a database specific keyword for.
      * @return The database specific keyword.
+     * @since v0.1
      */
     @NotNull
     public String getKeyword(@NotNull TableCreationKeywords keyword) {
@@ -133,6 +137,7 @@ public enum SupportedDatabases {
      * @param sqlKeyword The SQL keyword to get a {@link TableCreationKeywords} from.
      * @return The representing keyword. {@link Optional#empty()} only if this database does not associate a keyword for
      * the given SQL keyword.
+     * @since v0.1
      */
     @NotNull
     public Optional<TableCreationKeywords> getKeyword(@NotNull String sqlKeyword) {
@@ -151,6 +156,7 @@ public enum SupportedDatabases {
      * @param <T>    The type of the values hold by {@code column}.
      * @param column The column to get the type for.
      * @return The SQL type representing the type of {@code column}.
+     * @since v0.1
      */
     @NotNull
     public <T> String getType(@NotNull ColumnPattern<T, ?> column) {
@@ -169,7 +175,7 @@ public enum SupportedDatabases {
      * @param sqlType The type to get a class for.
      * @return An {@link Optional} containing the {@link Class} representing the appropriate SQL type. Returns
      * {@link Optional#empty()} if and only if for {@code sqlType} no class is defined.
-     * @since 2u14
+     * @since v0.1
      */
     @NotNull
     public Optional<Class<?>> getType(@NotNull String sqlType) {
@@ -190,6 +196,7 @@ public enum SupportedDatabases {
      * @param identifier The identifier to quote. If an identifier {@code first_part.second_part} contains a dot it is
      *                   quoted like (e.g. quoted with double quotes) {@code "first_part"."second_part"}.
      * @return The quoted identifier.
+     * @since v0.1
      */
     @NotNull
     public String quoteIdentifier(@NotNull String identifier) {
@@ -202,6 +209,9 @@ public enum SupportedDatabases {
                 .collect(Collectors.joining("."));
     }
 
+    /*
+     * @since v0.1
+     */
     @Override
     @NotNull
     public String toString() {
@@ -212,6 +222,7 @@ public enum SupportedDatabases {
      * Returns the default port of the dbms.
      *
      * @return The default port of the dbms.
+     * @since v0.1
      */
     public int getDefaultPort() {
         return defaultPort;

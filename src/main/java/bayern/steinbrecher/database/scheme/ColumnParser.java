@@ -14,10 +14,14 @@ import java.util.logging.Logger;
  *
  * @param <T> The type to convert from and to a SQL representation.
  * @author Stefan Huber
+ * @since v0.1
  */
 //TODO Wait for generic enums
 public abstract /* final */ class ColumnParser<T> {
 
+    /*
+     * @since v0.1
+     */
     public static final ColumnParser<String> STRING_COLUMN_PARSER = new ColumnParser<>() {
         @Override
         @NotNull
@@ -42,6 +46,9 @@ public abstract /* final */ class ColumnParser<T> {
             return String.class;
         }
     };
+    /*
+     * @since v0.1
+     */
     public static final ColumnParser<Integer> INTEGER_COLUMN_PARSER = new ColumnParser<>() {
         @Override
         @NotNull
@@ -63,6 +70,9 @@ public abstract /* final */ class ColumnParser<T> {
             return Integer.class;
         }
     };
+    /*
+     * @since v0.1
+     */
     public static final ColumnParser<Boolean> BOOLEAN_COLUMN_PARSER = new ColumnParser<>() {
         @Override
         @NotNull
@@ -82,6 +92,9 @@ public abstract /* final */ class ColumnParser<T> {
             return Boolean.class;
         }
     };
+    /*
+     * @since v0.1
+     */
     public static final ColumnParser<LocalDate> LOCALDATE_COLUMN_PARSER = new ColumnParser<>() {
         @Override
         @NotNull
@@ -113,6 +126,9 @@ public abstract /* final */ class ColumnParser<T> {
             return LocalDate.class;
         }
     };
+    /*
+     * @since v0.1
+     */
     public static final ColumnParser<Double> DOUBLE_COLUMN_PARSER = new ColumnParser<Double>() {
         @Override
         @NotNull
@@ -145,6 +161,7 @@ public abstract /* final */ class ColumnParser<T> {
      *
      * @param value The value to parse.
      * @return The typed value represented by {@code value}.
+     * @since v0.1
      */
     @NotNull
     public abstract Optional<T> parse(@Nullable String value);
@@ -157,6 +174,7 @@ public abstract /* final */ class ColumnParser<T> {
      * @param value The value to convert.
      * @return The {@link String} representation of the given value suitable for SQL.
      * @see #toString(java.lang.Object)
+     * @since v0.1
      */
     @NotNull
     protected String toStringImpl(@NotNull T value) {
@@ -169,6 +187,7 @@ public abstract /* final */ class ColumnParser<T> {
      *
      * @param value The value to convert.
      * @return A {@link String} representation of the given value suitable for SQL.
+     * @since v0.1
      */
     @NotNull
     public final String toString(@Nullable T value) {
@@ -185,6 +204,7 @@ public abstract /* final */ class ColumnParser<T> {
      * Returns the generic type of the class. This method is needed since type ereasure takes place.
      *
      * @return The generic type of the class.
+     * @since v0.1
      */
     @NotNull
     public abstract Class<T> getType();

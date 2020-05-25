@@ -2,6 +2,7 @@ package bayern.steinbrecher.database.scheme;
 
 /**
  * @author Stefan Huber
+ * @since v0.1
  */
 public enum TableCreationKeywords {
     DEFAULT,

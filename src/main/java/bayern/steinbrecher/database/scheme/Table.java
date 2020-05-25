@@ -23,6 +23,7 @@ import java.util.stream.Stream;
  * @param <T> The type representing the whole table.
  * @param <E> The type of an entry of the table.
  * @author Stefan Huber
+ * @since v0.1
  */
 public class Table<T, E> {
     private static final Logger LOGGER = Logger.getLogger(Table.class.getName());
@@ -53,6 +54,9 @@ public class Table<T, E> {
         return Stream.concat(getRequiredColumns().stream(), getOptionalColumns().stream());
     }
 
+    /*
+     * @since v0.1
+     */
     public T parseFrom(@NotNull List<List<String>> queryResult) {
         List<String> headings = queryResult.get(0);
         Map<ColumnPattern<?, E>, Collection<Integer>> patternToColumnMapping = streamAllColumns()
@@ -104,14 +108,23 @@ public class Table<T, E> {
                 }));
     }
 
+    /*
+     * @since v0.1
+     */
     public String getRealTableName() {
         return realTableName;
     }
 
+    /*
+     * @since v0.1
+     */
     public Collection<SimpleColumnPattern<?, E>> getRequiredColumns() {
         return requiredColumns;
     }
 
+    /*
+     * @since v0.1
+     */
     public Collection<ColumnPattern<?, E>> getOptionalColumns() {
         return optionalColumns;
     }
