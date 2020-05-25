@@ -36,7 +36,7 @@ public abstract class ColumnPattern<T, U> {
         this.parser = parser;
     }
 
-    /*
+    /**
      * @since v0.1
      */
     @NotNull
@@ -44,7 +44,7 @@ public abstract class ColumnPattern<T, U> {
         return columnNamePattern;
     }
 
-    /*
+    /**
      * @since v0.1
      */
     public boolean matches(String columnName) {
@@ -52,7 +52,7 @@ public abstract class ColumnPattern<T, U> {
                 .matches();
     }
 
-    /*
+    /**
      * @since v0.1
      */
     @NotNull
@@ -83,7 +83,7 @@ public abstract class ColumnPattern<T, U> {
         }
     }
 
-    /*
+    /**
      * @since v0.1
      */
     public abstract U combineImpl(@NotNull U toSet, @NotNull String columnName, @Nullable String valueToParse);
@@ -107,7 +107,7 @@ public abstract class ColumnPattern<T, U> {
         return isEqual;
     }
 
-    /*
+    /**
      * @since v0.1
      */
     @Override
@@ -119,7 +119,7 @@ public abstract class ColumnPattern<T, U> {
         return hash;
     }
 
-    /*
+    /**
      * @since v0.1
      */
     @Override

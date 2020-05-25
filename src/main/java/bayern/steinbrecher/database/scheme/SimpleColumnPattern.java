@@ -80,7 +80,7 @@ public class SimpleColumnPattern<T, U> extends ColumnPattern<T, U> {
         this.setter = setter;
     }
 
-    /*
+    /**
      * @since v0.1
      */
     @Override

@@ -45,7 +45,7 @@ public class RegexColumnPattern<T, U, K> extends ColumnPattern<T, U> {
         this.keyExtractor = keyExtractor;
     }
 
-    /*
+    /**
      * @since v0.1
      */
     public U combineImpl(@NotNull U toSet, @NotNull String columnName, @Nullable String valueToParse) {

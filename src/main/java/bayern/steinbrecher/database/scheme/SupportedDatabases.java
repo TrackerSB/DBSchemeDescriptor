@@ -209,7 +209,7 @@ public enum SupportedDatabases {
                 .collect(Collectors.joining("."));
     }
 
-    /*
+    /**
      * @since v0.1
      */
     @Override

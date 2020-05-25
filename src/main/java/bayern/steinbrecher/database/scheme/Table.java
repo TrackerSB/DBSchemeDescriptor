@@ -54,7 +54,7 @@ public class Table<T, E> {
         return Stream.concat(getRequiredColumns().stream(), getOptionalColumns().stream());
     }
 
-    /*
+    /**
      * @since v0.1
      */
     public T parseFrom(@NotNull List<List<String>> queryResult) {
@@ -108,21 +108,21 @@ public class Table<T, E> {
                 }));
     }
 
-    /*
+    /**
      * @since v0.1
      */
     public String getRealTableName() {
         return realTableName;
     }
 
-    /*
+    /**
      * @since v0.1
      */
     public Collection<SimpleColumnPattern<?, E>> getRequiredColumns() {
         return requiredColumns;
     }
 
-    /*
+    /**
      * @since v0.1
      */
     public Collection<ColumnPattern<?, E>> getOptionalColumns() {

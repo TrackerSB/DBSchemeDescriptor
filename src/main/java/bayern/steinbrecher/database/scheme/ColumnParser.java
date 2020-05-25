@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 //TODO Wait for generic enums
 public abstract /* final */ class ColumnParser<T> {
 
-    /*
+    /**
      * @since v0.1
      */
     public static final ColumnParser<String> STRING_COLUMN_PARSER = new ColumnParser<>() {
@@ -46,7 +46,7 @@ public abstract /* final */ class ColumnParser<T> {
             return String.class;
         }
     };
-    /*
+    /**
      * @since v0.1
      */
     public static final ColumnParser<Integer> INTEGER_COLUMN_PARSER = new ColumnParser<>() {
@@ -70,7 +70,7 @@ public abstract /* final */ class ColumnParser<T> {
             return Integer.class;
         }
     };
-    /*
+    /**
      * @since v0.1
      */
     public static final ColumnParser<Boolean> BOOLEAN_COLUMN_PARSER = new ColumnParser<>() {
@@ -92,7 +92,7 @@ public abstract /* final */ class ColumnParser<T> {
             return Boolean.class;
         }
     };
-    /*
+    /**
      * @since v0.1
      */
     public static final ColumnParser<LocalDate> LOCALDATE_COLUMN_PARSER = new ColumnParser<>() {
@@ -126,7 +126,7 @@ public abstract /* final */ class ColumnParser<T> {
             return LocalDate.class;
         }
     };
-    /*
+    /**
      * @since v0.1
      */
     public static final ColumnParser<Double> DOUBLE_COLUMN_PARSER = new ColumnParser<Double>() {
