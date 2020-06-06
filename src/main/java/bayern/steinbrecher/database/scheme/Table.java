@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * This enum lists all tables and their schemes needed.
+ * Represents a table and all patterns for its required and optional columns.
  *
  * @param <T> The type representing the whole table.
  * @param <E> The type of an entry of the table.
